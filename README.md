@@ -1,7 +1,7 @@
 # iOS-Widgets (Scriptable)
 
 <h2>Air Quality</h2>
-<img src="https://user-images.githubusercontent.com/73252614/103410002-a9f53200-4b69-11eb-9f35-8e3ee806b272.jpeg" width="200">
+<img src="https://user-images.githubusercontent.com/73252614/103410002-a9f53200-4b69-11eb-9f35-8e3ee806b272.jpeg" width="150">
 The World Air Quality Index project is a non-profit project started in 2007. Its mission is to promote air pollution awareness for citizens and provide a unified and world-wide air quality information. 
 
 The project is providing transparent air quality information for more than 130 countries, covering more than 30,000 stations in 2000 major cities, via those two websites: aqicn.org and waqi.info.
