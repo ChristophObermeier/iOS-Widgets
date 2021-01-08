@@ -1,4 +1,4 @@
-# iOS-Widgets
+# iOS-Widgets (Scriptable)
 
 <h2>Air Quality</h2>
 <img src="https://user-images.githubusercontent.com/73252614/103410002-a9f53200-4b69-11eb-9f35-8e3ee806b272.jpeg" width="200">
@@ -21,4 +21,4 @@ For more info visit: https://www.mvg.de/en.html
 <h1>Requirements</h1>
 
 - Apple Device with iOS 14.
-- Scriptable latest.
+- [Scriptable](https://scriptable.app) latest.
