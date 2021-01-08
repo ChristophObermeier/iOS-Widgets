@@ -32,12 +32,11 @@ For private use only! Please enjoy responsibly :)
 
 <h1>Changelog</h1>
 31.12.2020 11:10
-<br
 - Minor UI changes.
 - Changed standard product to "ubahn".
 
 16.12.2020 16:45
-<br>- First Draft. 
+- First Draft. 
 
 <h1>Credits</h1>
 Thaaaaaank youuuuuu @simonbs for Scriptable.app for you great widgets and thank you @leftshift, @florianlederer & @rasshofer for the inspiration!
