@@ -45,5 +45,5 @@ Get the current Air Quality in your city based on fixed location.
 
 <h1>FAQ</h1>
 
-- [AQI Scale: What do the colors and numbers mean?](https://aqicn.org/scale/) 
+- [AQI Scale: What do the colors and numbers mean?](https://aqicn.org/scale/) <b>HINT: Touch your Widget ;-)</b>
 - Where do I find the API documentation? [HERE!](https://aqicn.org/api/de/)
