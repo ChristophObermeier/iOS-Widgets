@@ -2,7 +2,7 @@
 iOS Scriptable Widget for current Air Quality / Pollution in your city.</br>
 <img src="https://user-images.githubusercontent.com/73252614/99568158-5ec6fb80-29cf-11eb-9c99-1659fc3ffaf8.png" width="250">
 
-<h1>Option #1: Air Quality location based</h1>
+<h1>#1: Air Quality location based</h1>
 
 <h2>Info</h2>
 Get the current Air Quality in your city based on current location.
@@ -23,7 +23,7 @@ Get the current Air Quality in your city based on current location.
 11. Select when interaction "Run Script".
 12. Save and enjoy the widget!
 
-<h1>Option #2: Air Quality fix location</h1>
+<h1>#2: Air Quality fix location</h1>
 
 <h2>Info</h2>
 Get the current Air Quality in your city based on fixed location.
