@@ -43,7 +43,7 @@ Get the current Air Quality in your city based on fixed location.
 10. Go into the settings of the widget.
 11. Choose script of step #5.
 12. Define the "Parameter", e. g. "Munich" or "Berlin" -> (you can double-check [here](https://aqicn.org/).)
-![Scriptable_Para_Setting](https://user-images.githubusercontent.com/73252614/99541276-e8b39c00-29b0-11eb-8c25-23675a736b90.jpg)
+<img src="https://user-images.githubusercontent.com/73252614/99541276-e8b39c00-29b0-11eb-8c25-23675a736b90.jpg" width="250"></img>
 
 <h1>FAQ</h1>
 
