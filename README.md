@@ -14,7 +14,7 @@ For more info visit: https://aqicn.org/contact/ or https://waqi.info
 <h2>MVG Widget</h2> 
 <img src="https://user-images.githubusercontent.com/73252614/102694125-6290ac80-421f-11eb-885d-8a68078d79ac.jpeg" width="200">
 The Munich Transport Corporation is one of the best and efficient public transport systems. With <a href ="https://github.com/ChristophObermeier/iOS-Widgets/tree/main/MVG-Widget">my widget</a> you get the departures of the next MVG transport service at your preferred MVG station. 
-</br>
+</p>
 For more info visit: https://www.mvg.de/en.html
 
 
