@@ -1,5 +1,6 @@
 <h1>Introduction</h1>
-iOS Scriptable Widget for current Air Quality / Pollution in your city.
+iOS Scriptable Widget for current Air Quality / Pollution in your city.</br>
+<img src="https://user-images.githubusercontent.com/73252614/99568158-5ec6fb80-29cf-11eb-9c99-1659fc3ffaf8.png" width="250">
 
 <h1>Option #1: Air Quality location based</h1>
 
