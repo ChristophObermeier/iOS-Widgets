@@ -18,14 +18,20 @@
 
 // Get your Station here https://www.mvg.de/dienste/abfahrtszeiten.html
 //"München" is not required to enter
-const station = args.widgetParameter
 
-const mvgstatID = "https://www.mvg.de/api/fahrinfo/location/queryWeb?q=" + station;
-var responseID;
-responseID = await new Request(mvgstatID).loadJSON();
+//Set for Debug in App
+//const station = "Odeonsplatz"
+
+//Adds "&" to combined station
+var clearstation = station.replace(" ","&")
+
+//Get Station ID
+const mvgstatID = "https://www.mvg.de/api/fahrinfo/location/queryWeb?q=" + clearstation
+var responseID
+responseID = await new Request(mvgstatID).loadJSON()
 
 // Store the MVG ID
-const mvgID = responseID.locations[0].id.toString();
+const mvgID = responseID.locations[0].id.toString()
 
 //Set your preferred MVG products
 const footway = false
@@ -36,46 +42,68 @@ const tram = false
 const zug = false
 
 //Get departures
-const mvgReq = "https://www.mvg.de/api/fahrinfo/departure/" + mvgID + "?sbahn=" + sbahn + "&ubahn=" + ubahn + "&bus=" + bus + "&tram=" + tram + "&footway" + footway + "&zug=" + zug;
+const mvgReq = "https://www.mvg.de/api/fahrinfo/departure/" + mvgID + "?sbahn=" + sbahn + "&ubahn=" + ubahn + "&bus=" + bus + "&tram=" + tram + "&footway" + footway + "&zug=" + zug
 var response
-response = await new Request(mvgReq).loadJSON();
+response = await new Request(mvgReq).loadJSON()
 
-function calculateTimeOffset(times) {
-return Math.round((times - Date.now()) / 60000);
+//Calculates Departure time
+function calculateTimeOffset(times)
+{
+return Math.round((times - Date.now()) / 60000)
+
 }
+
+//Calculates real departure incl. delay
+function calculatedeparture (delay, time) {
+  if (delay == undefined)
+  {
+    return time
+  }
+  else
+  {
+    return delay+time
+  }
+}
+
+//Shorten Destination, if length exceeds space
+function truncate(destination, n)
+  {
+  return (destination.length > 20) ? destination.substr(0, 19) + '...' : destination
+  }
 
 // Store the MVG values.
 // Departure #1
-const destination1 = response.departures[0].destination.toString()
+const destination1 = truncate(response.departures[0].destination.toString())
 const label1 = response.departures[0].label.toString()
 const platform1 = response.departures[0].platform
+const bgcolor1 = response.departures[0].lineBackgroundColor
 const delay1 = response.departures[0].delay
 const time1 = calculateTimeOffset(response.departures[0].departureTime)
-const abfahrt1 = delay1 + time1
+const abfahrt1 = calculatedeparture(delay1,time1)
 
 // Departure #2
-const destination2 = response.departures[1].destination.toString()
+const destination2 = truncate(response.departures[1].destination.toString())
 const label2 = response.departures[1].label.toString()
 const platform2 = response.departures[1].platform
 const delay2 = response.departures[1].delay
 const time2 = calculateTimeOffset(response.departures[1].departureTime)
-const abfahrt2 = delay2 + time2
+const abfahrt2 = calculatedeparture(delay2,time2)
 
 // Departure #3
-const destination3 = response.departures[2].destination.toString()
+const destination3 = truncate(response.departures[2].destination.toString())
 const label3 = response.departures[2].label.toString()
 const platform3 = response.departures[2].platform
 const delay3 = response.departures[2].delay
 const time3 = calculateTimeOffset(response.departures[2].departureTime)
-const abfahrt3 = delay3 + time3
+const abfahrt3 = calculatedeparture(delay3,time3)
 
 // Departure #4
-const destination4 = response.departures[3].destination.toString()
+const destination4 = truncate(response.departures[3].destination.toString())
 const label4 = response.departures[3].label.toString()
 const platform4 = response.departures[3].platform
 const delay4 = response.departures[3].delay
 const time4 = calculateTimeOffset(response.departures[3].departureTime)
-const abfahrt4 = delay4 + time4
+const abfahrt4 = calculatedeparture(delay4,time4)
 
 const widget = await createWidget()
 
@@ -95,44 +123,44 @@ function createWidget() {
   title.font = Font.boldSystemFont(15)
   title.textColor = Color.white()
   title.centerAlignText()
-  title.minimumScaleFactor = 0.5
+  title.minimumScaleFactor = 0.6
   title.lineLimit = 2
 
   widget.addSpacer(15)
 
   //Departure #1
-  let destinationText1 = widget.addText("⏱ "+abfahrt1 + "min " + label1 + " ➡️ " + destination1 + " @" + platform1)
+  let destinationText1 = widget.addText("⏱"+abfahrt1 + "min " + label1 + "➡️ " + destination1 + " @" + platform1)
   destinationText1.font = Font.boldSystemFont(10)
   destinationText1.textColor = Color.white()
   destinationText1.centerAlignText()
-  destinationText1.minimumScaleFactor = 0.6
+  destinationText1.minimumScaleFactor = 0.4
 
   widget.addSpacer(10)
 
   //Departure #2
-  let destinationText2 = widget.addText("⏱ "+abfahrt2 + "min " + label2 + " ➡️ " + destination2 + " @" + platform2)
+  let destinationText2 = widget.addText("⏱"+abfahrt2 + "min " + label2 + "➡️ " + destination2 + " @" + platform2)
   destinationText2.font = Font.boldSystemFont(10)
   destinationText2.textColor = Color.white()
   destinationText2.centerAlignText()
-  destinationText2.minimumScaleFactor = 0.6
+  destinationText2.minimumScaleFactor = 0.4
 
   widget.addSpacer(10)
 
   //Departure #3
-  let destinationText3 = widget.addText("⏱ "+abfahrt3 + "min " + label3 + " ➡️ " + destination3 + " @" + platform3)
+  let destinationText3 = widget.addText("⏱"+abfahrt3 + "min " + label3 + "➡️ " + destination3 + " @" + platform3)
   destinationText3.font = Font.boldSystemFont(10)
   destinationText3.textColor = Color.white()
   destinationText3.centerAlignText()
-  destinationText3.minimumScaleFactor = 0.6
+  destinationText3.minimumScaleFactor = 0.4
 
   widget.addSpacer(10)
 
   //Departure #4
-  let destinationText4 = widget.addText("⏱ "+abfahrt4 + "min " + label4 + " ➡️ " +destination4 + " @" + platform4)
+  let destinationText4 = widget.addText("⏱"+abfahrt4 + "min " + label4 + "➡️ " +destination4 + " @" + platform4)
   destinationText4.font = Font.boldSystemFont(10)
   destinationText4.textColor = Color.white()
   destinationText4.centerAlignText()
-  destinationText4.minimumScaleFactor = 0.6
+  destinationText4.minimumScaleFactor = 0.4
 return widget
 }
 Script.complete()
