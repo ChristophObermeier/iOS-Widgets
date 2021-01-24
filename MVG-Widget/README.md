@@ -20,7 +20,7 @@ Get the departures of the next MVG transport service at your preferred MVG stati
 9. Go into the settings of the widget.
 10. Choose script of step #4.
 11. Select when interaction "Run Script".
-12. Use your preferred station, e. g. "Marienplatz" or "Odeonsplatz" as parameter.
+12. Use your preferred station, e. g. "Marienplatz", "Messestadt Ost" or "Odeonsplatz" as parameter without "".
 13. Save and enjoy the widget!
 
 <h1>Disclaimer</h1>
@@ -31,14 +31,19 @@ For private use only! Please enjoy responsibly :)
 - Specific products can be chosen in the script, e. g. ubahn / sbahn.
 
 <h1>Changelog</h1>
-31.12.2020 11:10
+24.01.2021
 
-  - Minor UI changes.
-  - Changed standard product to "ubahn".
+- Stations with more than one word like "Messestadt Ost" can now be entered as given.
+- Fixed a bug with n/a delay.
+- Minor UI changes.
+
+31.12.2020 11:10
+- Minor UI changes.
+- Changed standard product to "ubahn".
 
 16.12.2020 16:45
 
-  - First Draft. 
+- First Draft. 
 
 <h1>Credits</h1>
 Thaaaaaank youuuuuu @simonbs for Scriptable.app for you great widgets and thank you @leftshift, @florianlederer & @rasshofer for the inspiration!
